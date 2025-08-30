@@ -1,80 +1,88 @@
+'use client';
+
 import React from 'react';
+import { useTranslations } from '@/hooks';
 
 interface FooterProps {
   className?: string;
 }
 
 export function Footer({ className = '' }: FooterProps) {
+  const { t } = useTranslations();
+
   return (
     <footer className={`border-t bg-gray-50 ${className}`}>
       <div className='container mx-auto px-4 py-8'>
         <div className='grid grid-cols-1 gap-8 md:grid-cols-4'>
           <div>
             <h3 className='mb-4 text-lg font-semibold text-gray-900'>GradFE</h3>
-            <p className='text-sm text-gray-600'>
-              Modern Next.js application with Clean Architecture, TypeScript,
-              and Tailwind CSS.
-            </p>
+            <p className='text-sm text-gray-600'>{t('footer.description')}</p>
           </div>
 
           <div>
-            <h4 className='text-md mb-4 font-medium text-gray-900'>Product</h4>
+            <h4 className='text-md mb-4 font-medium text-gray-900'>
+              {t('footer.quickLinks')}
+            </h4>
             <ul className='space-y-2 text-sm text-gray-600'>
               <li>
                 <a href='#' className='hover:text-gray-900'>
-                  Features
+                  {t('page.features.fastModern')}
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:text-gray-900'>
-                  Pricing
+                  {t('footer.components')}
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:text-gray-900'>
-                  Documentation
+                  {t('footer.documentation')}
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className='text-md mb-4 font-medium text-gray-900'>Company</h4>
+            <h4 className='text-md mb-4 font-medium text-gray-900'>
+              {t('footer.company')}
+            </h4>
             <ul className='space-y-2 text-sm text-gray-600'>
               <li>
                 <a href='#' className='hover:text-gray-900'>
-                  About
+                  {t('footer.aboutUs')}
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:text-gray-900'>
-                  Blog
+                  {t('navigation.blog')}
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:text-gray-900'>
-                  Careers
+                  {t('footer.careers')}
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className='text-md mb-4 font-medium text-gray-900'>Support</h4>
+            <h4 className='text-md mb-4 font-medium text-gray-900'>
+              {t('footer.support')}
+            </h4>
             <ul className='space-y-2 text-sm text-gray-600'>
               <li>
                 <a href='#' className='hover:text-gray-900'>
-                  Help Center
+                  {t('footer.helpCenter')}
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:text-gray-900'>
-                  Contact
+                  {t('footer.contact')}
                 </a>
               </li>
               <li>
                 <a href='#' className='hover:text-gray-900'>
-                  Status
+                  {t('footer.community')}
                 </a>
               </li>
             </ul>
@@ -82,7 +90,7 @@ export function Footer({ className = '' }: FooterProps) {
         </div>
 
         <div className='mt-8 border-t pt-8 text-center text-sm text-gray-600'>
-          <p>&copy; 2025 GradFE. All rights reserved.</p>
+          <p>&copy; 2025 GradFE. {t('footer.allRightsReserved')}</p>
         </div>
       </div>
     </footer>

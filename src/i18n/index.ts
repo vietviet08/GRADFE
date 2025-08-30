@@ -8,7 +8,7 @@ export const defaultLocale: Locale = 'en';
 export const locales: Locale[] = ['en', 'vi'];
 
 export interface TranslationResources {
-  common: Record<string, string | Record<string, string>>;
+  [key: string]: unknown;
 }
 
 /**
@@ -18,10 +18,8 @@ export async function getTranslations(
   locale: Locale
 ): Promise<TranslationResources> {
   try {
-    const common = await import(`./locales/${locale}/common.json`);
-    return {
-      common: common.default,
-    };
+    const translations = await import(`./locales/${locale}.json`);
+    return translations.default;
   } catch (error) {
     console.warn(`Failed to load translations for locale: ${locale}`, error);
     // Fallback to default locale

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export { useMounted } from './use-mounted';
+export { useTranslations } from './use-translations';
 
 /**
  * Hook to debounce a value
