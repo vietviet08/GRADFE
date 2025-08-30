@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { locales, defaultLocale } from './i18n';
+import { locales, defaultLocale, Locale } from './i18n';
 
 export function middleware(request: NextRequest) {
   // Check if there is any supported locale in the pathname
@@ -41,7 +41,7 @@ export function middleware(request: NextRequest) {
 function getLocaleFromRequest(request: NextRequest): string | undefined {
   // Get locale from cookie
   const localeCookie = request.cookies.get('locale')?.value;
-  if (localeCookie && locales.includes(localeCookie as any)) {
+  if (localeCookie && locales.includes(localeCookie as Locale)) {
     return localeCookie;
   }
 
@@ -53,7 +53,7 @@ function getLocaleFromRequest(request: NextRequest): string | undefined {
       .split('-')[0]
       .toLowerCase();
 
-    if (locales.includes(preferredLocale as any)) {
+    if (locales.includes(preferredLocale as Locale)) {
       return preferredLocale;
     }
   }
