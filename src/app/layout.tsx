@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { Header, Footer } from '@/components/layout';
+import { ThemeProvider } from './theme-provider';
+import { Navbar } from '@/components/common';
+import { Footer } from '@/components/layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -52,6 +54,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
 };
 
 export default function RootLayout({
@@ -60,13 +66,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
-        <div className='flex min-h-screen flex-col'>
-          <Header />
-          <main className='flex-1'>{children}</main>
-          <Footer />
-        </div>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className='flex min-h-screen flex-col bg-background text-foreground'>
+            <Navbar />
+            <main className='container mx-auto flex-1 px-4 py-8'>
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

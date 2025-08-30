@@ -1,3 +1,4 @@
+import { ThemeToggle, SimpleThemeToggle } from '@/components/theme';
 import { Button } from '@/components/ui';
 
 export default function HomePage() {
@@ -5,10 +6,10 @@ export default function HomePage() {
     <div className='container mx-auto px-4 py-16'>
       {/* Hero Section */}
       <section className='mb-16 text-center'>
-        <h1 className='mb-6 text-4xl font-bold text-gray-900 md:text-6xl'>
-          Welcome to <span className='text-blue-600'>GradFE</span>
+        <h1 className='mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-4xl font-bold text-transparent md:text-6xl'>
+          Welcome to GradFE
         </h1>
-        <p className='mx-auto mb-8 max-w-2xl text-xl text-gray-600'>
+        <p className='mx-auto mb-8 max-w-2xl text-xl text-muted-foreground'>
           A modern Next.js application built with Clean Architecture,
           TypeScript, Tailwind CSS, and best practices for scalable web
           development.
@@ -18,6 +19,32 @@ export default function HomePage() {
           <Button variant='outline' size='lg'>
             View on GitHub
           </Button>
+        </div>
+      </section>
+
+      {/* Theme Testing Section */}
+      <section className='mb-16 rounded-lg border border-border bg-card py-12'>
+        <h2 className='mb-6 text-center text-2xl font-semibold'>
+          Theme Switching
+        </h2>
+        <div className='grid grid-cols-1 gap-8 px-6 md:grid-cols-2'>
+          <div className='rounded-lg border border-border bg-card p-6'>
+            <h3 className='mb-4 text-lg font-semibold'>
+              Dropdown Theme Toggle
+            </h3>
+            <p className='mb-4 text-muted-foreground'>
+              Choose between light, dark, and system theme modes.
+            </p>
+            <ThemeToggle />
+          </div>
+
+          <div className='rounded-lg border border-border bg-card p-6'>
+            <h3 className='mb-4 text-lg font-semibold'>Simple Theme Toggle</h3>
+            <p className='mb-4 text-muted-foreground'>
+              Quick toggle between light and dark modes.
+            </p>
+            <SimpleThemeToggle />
+          </div>
         </div>
       </section>
 
