@@ -1,5 +1,6 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
+  root: true,
   extends: [
     'next/core-web-vitals',
     'next/typescript',
@@ -46,5 +47,10 @@ module.exports = {
         alwaysTryTypes: true,
       },
     },
+  },
+  env: {
+    browser: true,
+    es2022: true,
+    node: true,
   },
 };
