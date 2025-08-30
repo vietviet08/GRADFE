@@ -25,12 +25,12 @@ export default function HomePage() {
       </section>
 
       {/* Theme Testing Section */}
-      <section className='mb-16 rounded-lg border border-border bg-card py-12'>
+      <section className='bg-card/50 dark:bg-card/30 mb-16 rounded-lg border border-border py-12'>
         <h2 className='mb-6 text-center text-2xl font-semibold'>
           {t('page.features.themeSwitching')}
         </h2>
         <div className='grid grid-cols-1 gap-8 px-6 md:grid-cols-2'>
-          <div className='rounded-lg border border-border bg-card p-6'>
+          <div className='bg-card/50 dark:bg-card/30 rounded-lg border border-border p-6'>
             <h3 className='mb-4 text-lg font-semibold'>
               {t('page.features.dropdownThemeToggle')}
             </h3>
@@ -40,7 +40,7 @@ export default function HomePage() {
             <ThemeToggle />
           </div>
 
-          <div className='rounded-lg border border-border bg-card p-6'>
+          <div className='bg-card/50 dark:bg-card/30 rounded-lg border border-border p-6'>
             <h3 className='mb-4 text-lg font-semibold'>
               {t('page.features.simpleThemeToggle')}
             </h3>
@@ -54,10 +54,10 @@ export default function HomePage() {
 
       {/* Features Section */}
       <section className='mb-16 grid grid-cols-1 gap-8 md:grid-cols-3'>
-        <div className='rounded-lg border p-6 text-center'>
-          <div className='mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100'>
+        <div className='bg-card/30 hover:bg-card/50 dark:bg-card/20 dark:hover:bg-card/30 rounded-lg border border-border p-6 text-center transition-colors dark:border-border'>
+          <div className='mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30'>
             <svg
-              className='h-6 w-6 text-blue-600'
+              className='h-6 w-6 text-blue-600 dark:text-blue-400'
               fill='none'
               stroke='currentColor'
               viewBox='0 0 24 24'
@@ -73,13 +73,15 @@ export default function HomePage() {
           <h3 className='mb-2 text-xl font-semibold'>
             {t('page.features.fastModern')}
           </h3>
-          <p className='text-gray-600'>{t('page.features.fastDescription')}</p>
+          <p className='text-gray-600 dark:text-gray-300'>
+            {t('page.features.fastDescription')}
+          </p>
         </div>
 
-        <div className='rounded-lg border p-6 text-center'>
-          <div className='mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-green-100'>
+        <div className='bg-card/30 hover:bg-card/50 dark:bg-card/20 dark:hover:bg-card/30 rounded-lg border border-border p-6 text-center transition-colors dark:border-border'>
+          <div className='mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-green-100 dark:bg-green-900/30'>
             <svg
-              className='h-6 w-6 text-green-600'
+              className='h-6 w-6 text-green-600 dark:text-green-400'
               fill='none'
               stroke='currentColor'
               viewBox='0 0 24 24'
@@ -95,13 +97,15 @@ export default function HomePage() {
           <h3 className='mb-2 text-xl font-semibold'>
             {t('page.features.typeSafe')}
           </h3>
-          <p className='text-gray-600'>{t('page.features.typeDescription')}</p>
+          <p className='text-gray-600 dark:text-gray-300'>
+            {t('page.features.typeDescription')}
+          </p>
         </div>
 
-        <div className='rounded-lg border p-6 text-center'>
-          <div className='mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-purple-100'>
+        <div className='bg-card/30 hover:bg-card/50 dark:bg-card/20 dark:hover:bg-card/30 rounded-lg border border-border p-6 text-center transition-colors dark:border-border'>
+          <div className='mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/30'>
             <svg
-              className='h-6 w-6 text-purple-600'
+              className='h-6 w-6 text-purple-600 dark:text-purple-400'
               fill='none'
               stroke='currentColor'
               viewBox='0 0 24 24'
@@ -117,39 +121,49 @@ export default function HomePage() {
           <h3 className='mb-2 text-xl font-semibold'>
             {t('page.features.cleanArchitecture')}
           </h3>
-          <p className='text-gray-600'>{t('page.features.cleanDescription')}</p>
+          <p className='text-gray-600 dark:text-gray-300'>
+            {t('page.features.cleanDescription')}
+          </p>
         </div>
       </section>
 
       {/* Tech Stack Section */}
       <section className='text-center'>
-        <h2 className='mb-8 text-3xl font-bold text-gray-900'>
+        <h2 className='mb-8 text-3xl font-bold text-gray-900 dark:text-gray-100'>
           {t('page.features.techStack')}
         </h2>
         <div className='grid grid-cols-2 gap-8 md:grid-cols-4'>
-          <div className='flex flex-col items-center'>
-            <div className='mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-gray-100'>
+          <div className='flex flex-col items-center transition-transform hover:scale-105'>
+            <div className='mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800'>
               <span className='text-2xl font-bold text-blue-600'>N</span>
             </div>
-            <span className='text-sm font-medium'>Next.js</span>
+            <span className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+              Next.js
+            </span>
           </div>
-          <div className='flex flex-col items-center'>
-            <div className='mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-gray-100'>
+          <div className='flex flex-col items-center transition-transform hover:scale-105'>
+            <div className='mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800'>
               <span className='text-2xl font-bold text-blue-400'>R</span>
             </div>
-            <span className='text-sm font-medium'>React</span>
+            <span className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+              React
+            </span>
           </div>
-          <div className='flex flex-col items-center'>
-            <div className='mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-gray-100'>
+          <div className='flex flex-col items-center transition-transform hover:scale-105'>
+            <div className='mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800'>
               <span className='text-2xl font-bold text-blue-700'>TS</span>
             </div>
-            <span className='text-sm font-medium'>TypeScript</span>
+            <span className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+              TypeScript
+            </span>
           </div>
-          <div className='flex flex-col items-center'>
-            <div className='mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-gray-100'>
+          <div className='flex flex-col items-center transition-transform hover:scale-105'>
+            <div className='mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800'>
               <span className='text-2xl font-bold text-teal-500'>TW</span>
             </div>
-            <span className='text-sm font-medium'>Tailwind</span>
+            <span className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+              Tailwind
+            </span>
           </div>
         </div>
       </section>

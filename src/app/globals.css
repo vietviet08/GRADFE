@@ -109,5 +109,68 @@ body {
   transition:
     background-color 0.3s ease,
     border-color 0.3s ease,
-    color 0.3s ease;
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Improved focus states for dark mode */
+.dark *:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+/* Better backdrop blur support */
+.backdrop-blur {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Enhanced glass effect for dark mode */
+.dark .bg-background\/95 {
+  background-color: color-mix(
+    in srgb,
+    var(--color-background) 95%,
+    transparent
+  );
+}
+
+.dark .bg-background\/60 {
+  background-color: color-mix(
+    in srgb,
+    var(--color-background) 60%,
+    transparent
+  );
+}
+
+/* Better contrast for selection */
+::selection {
+  background-color: color-mix(in srgb, var(--color-primary) 30%, transparent);
+  color: var(--color-primary-foreground);
+}
+
+.dark ::selection {
+  background-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+}
+
+/* Improved button and interactive element states */
+.dark button:hover,
+.dark a:hover {
+  transition: all 0.2s ease;
+}
+
+/* Enhanced card shadows for depth */
+.dark .border {
+  border-color: color-mix(in srgb, var(--color-border) 60%, transparent);
+}
+
+.dark .shadow {
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.3),
+    0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dark .shadow-md {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }

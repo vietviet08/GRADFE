@@ -18,11 +18,14 @@ export function Navbar({ className = '' }: NavbarProps) {
 
   return (
     <nav
-      className={`bg-background/95 supports-[backdrop-filter]:bg-background/60 border-b backdrop-blur ${className}`}
+      className={`border-border/40 bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur dark:border-border ${className}`}
     >
       <div className='container mx-auto flex h-16 items-center justify-between px-4'>
         {/* Logo */}
-        <Link href='/' className='text-xl font-bold text-foreground'>
+        <Link
+          href='/'
+          className='text-xl font-bold text-foreground transition-colors hover:text-primary'
+        >
           GradFE
         </Link>
 
@@ -30,25 +33,25 @@ export function Navbar({ className = '' }: NavbarProps) {
         <div className='hidden items-center space-x-6 md:flex'>
           <Link
             href='/'
-            className='text-foreground/80 transition-colors hover:text-foreground'
+            className='text-foreground/70 dark:text-foreground/80 text-sm font-medium transition-colors hover:text-foreground dark:hover:text-foreground'
           >
             {t('navigation.home')}
           </Link>
           <Link
             href='/about'
-            className='text-foreground/80 transition-colors hover:text-foreground'
+            className='text-foreground/70 dark:text-foreground/80 text-sm font-medium transition-colors hover:text-foreground dark:hover:text-foreground'
           >
             {t('navigation.about')}
           </Link>
           <Link
             href='/docs'
-            className='text-foreground/80 transition-colors hover:text-foreground'
+            className='text-foreground/70 dark:text-foreground/80 text-sm font-medium transition-colors hover:text-foreground dark:hover:text-foreground'
           >
             {t('footer.documentation')}
           </Link>
           <Link
             href='/contact'
-            className='text-foreground/80 transition-colors hover:text-foreground'
+            className='text-foreground/70 dark:text-foreground/80 text-sm font-medium transition-colors hover:text-foreground dark:hover:text-foreground'
           >
             {t('navigation.contact')}
           </Link>

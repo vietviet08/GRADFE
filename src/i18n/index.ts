@@ -49,6 +49,11 @@ export function t(
     if (typeof value === 'object' && value !== null && k in value) {
       value = (value as Record<string, unknown>)[k];
     } else {
+      console.warn(`Translation key not found: ${key}`, {
+        translations,
+        currentKey: k,
+        currentValue: value,
+      });
       return key; // Return key if translation not found
     }
   }
