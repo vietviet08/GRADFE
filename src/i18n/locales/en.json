@@ -56,8 +56,10 @@
     "general": "Something went wrong. Please try again.",
     "network": "Network error. Please check your connection.",
     "unauthorized": "You are not authorized to perform this action.",
-    "notFound": "The requested resource was not found.",
-    "serverError": "Server error. Please try again later."
+    "notFound": "Page Not Found",
+    "notFoundDescription": "Sorry, we couldn't find the page you're looking for. The page might have been moved, deleted, or the URL might be incorrect.",
+    "serverError": "Server error. Please try again later.",
+    "contactSupport": "If you believe this is a mistake, please contact support."
   },
   "language": {
     "switchLanguage": "Switch Language",

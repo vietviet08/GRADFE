@@ -21,7 +21,17 @@ export function middleware(request: NextRequest) {
   );
 
   if (pathnameHasLocale) {
-    return NextResponse.next();
+    // Extract locale from pathname for debugging
+    const locale = locales.find(
+      locale => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    );
+
+    // Add locale to request headers so the app can access it
+    const response = NextResponse.next();
+    if (locale) {
+      response.headers.set('x-pathname-locale', locale);
+    }
+    return response;
   }
 
   // Redirect if there is no locale in the pathname
@@ -29,7 +39,9 @@ export function middleware(request: NextRequest) {
 
   // For default locale, don't add prefix to URL
   if (locale === defaultLocale) {
-    return NextResponse.next();
+    const response = NextResponse.next();
+    response.headers.set('x-pathname-locale', defaultLocale);
+    return response;
   }
 
   // Redirect to the localized path

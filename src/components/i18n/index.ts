@@ -4,3 +4,4 @@ export {
   useTranslationContext,
 } from './translation-provider';
 export { LoadingBoundary } from './loading-boundary';
+export { LocaleAwareNotFound } from './locale-aware-not-found';
