@@ -22,7 +22,9 @@ export function useTranslations() {
     const loadTranslations = async () => {
       setIsLoading(true);
       try {
+        console.log('Loading translations for locale:', currentLocale);
         const data = await getTranslations(currentLocale);
+        console.log('Loaded translations:', data);
         setTranslations(data);
       } catch (error) {
         console.error('Failed to load translations:', error);
@@ -46,6 +48,7 @@ export function useTranslations() {
     params?: Record<string, string | number>
   ): string => {
     if (!translations) {
+      console.warn('Translations not loaded yet for key:', key);
       return key; // Return key if translations not loaded yet
     }
     return t(key, translations, params);

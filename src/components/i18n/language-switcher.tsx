@@ -65,7 +65,7 @@ export function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
     <div className={`relative ${className}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className='text-foreground/80 flex items-center space-x-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
+        className='text-foreground/80 dark:text-foreground/90 dark:hover:bg-accent/80 flex items-center space-x-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
         aria-label='Change language'
         aria-expanded={isOpen}
       >
@@ -98,15 +98,15 @@ export function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
           />
 
           {/* Dropdown */}
-          <div className='absolute right-0 top-full z-20 mt-2 min-w-[160px] rounded-md border bg-popover p-1 shadow-md'>
+          <div className='dark:border-border/60 absolute right-0 top-full z-20 mt-2 min-w-[160px] rounded-md border bg-popover p-1 shadow-md dark:shadow-lg'>
             {locales.map(locale => (
               <button
                 key={locale}
                 onClick={() => switchLanguage(locale)}
-                className={`flex w-full items-center space-x-3 rounded-sm px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground ${
+                className={`dark:hover:bg-accent/80 flex w-full items-center space-x-3 rounded-sm px-3 py-2 text-sm transition-colors hover:bg-accent hover:text-accent-foreground ${
                   locale === currentLocale
-                    ? 'bg-accent text-accent-foreground'
-                    : 'text-foreground/80'
+                    ? 'dark:bg-accent/80 bg-accent text-accent-foreground'
+                    : 'text-foreground/80 dark:text-foreground/90'
                 }`}
               >
                 <span className='text-base'>{getLanguageFlag(locale)}</span>
