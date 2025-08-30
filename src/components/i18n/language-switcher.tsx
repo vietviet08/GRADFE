@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useRouter, usePathname, useParams } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { Globe } from 'lucide-react';
 import { Locale, locales, defaultLocale } from '@/i18n';
+import { useTranslationContext } from './translation-provider';
 
 interface LanguageSwitcherProps {
   className?: string;
@@ -16,10 +17,7 @@ export function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  const params = useParams();
-
-  // Get current locale from URL params
-  const currentLocale = (params?.locale as Locale) || defaultLocale;
+  const { locale: currentLocale, changeLocale } = useTranslationContext();
 
   const switchLanguage = (locale: Locale) => {
     setIsOpen(false);
@@ -36,6 +34,10 @@ export function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
     // Set locale cookie for future requests
     document.cookie = `locale=${locale}; path=/; max-age=31536000`; // 1 year
 
+    // Update translations context
+    changeLocale(locale);
+
+    // Navigate to new path
     router.push(newPath);
   };
 
