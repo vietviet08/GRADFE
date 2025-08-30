@@ -1,6 +1,10 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/theme';
+import { LanguageSwitcher } from '@/components/i18n';
+import { useTranslations } from '@/hooks';
 
 interface NavbarProps {
   className?: string;
@@ -10,9 +14,11 @@ interface NavbarProps {
  * Navigation bar component with theme toggle
  */
 export function Navbar({ className = '' }: NavbarProps) {
+  const { t } = useTranslations();
+
   return (
     <nav
-      className={`border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 ${className}`}
+      className={`bg-background/95 supports-[backdrop-filter]:bg-background/60 border-b backdrop-blur ${className}`}
     >
       <div className='container mx-auto flex h-16 items-center justify-between px-4'>
         {/* Logo */}
@@ -26,30 +32,30 @@ export function Navbar({ className = '' }: NavbarProps) {
             href='/'
             className='text-foreground/80 transition-colors hover:text-foreground'
           >
-            Home
+            {t('navigation.home')}
           </Link>
           <Link
             href='/about'
             className='text-foreground/80 transition-colors hover:text-foreground'
           >
-            About
+            {t('navigation.about')}
           </Link>
           <Link
             href='/docs'
             className='text-foreground/80 transition-colors hover:text-foreground'
           >
-            Docs
+            {t('footer.documentation')}
           </Link>
           <Link
             href='/contact'
             className='text-foreground/80 transition-colors hover:text-foreground'
           >
-            Contact
+            {t('navigation.contact')}
           </Link>
         </div>
 
-        {/* Right side with theme toggle */}
-        <div className='flex items-center space-x-4'>
+        {/* Right side with language switcher and theme toggle */}
+        <div className='flex items-center space-x-2'>
           {/* Mobile menu button (optional) */}
           <button
             className='text-foreground/80 hover:text-foreground md:hidden'
@@ -69,6 +75,9 @@ export function Navbar({ className = '' }: NavbarProps) {
               />
             </svg>
           </button>
+
+          {/* Language Switcher */}
+          <LanguageSwitcher />
 
           {/* Theme Toggle */}
           <ThemeToggle />

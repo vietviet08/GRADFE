@@ -1,0 +1,109 @@
+{
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi",
+    "success": "Thành công",
+    "cancel": "Hủy",
+    "confirm": "Xác nhận",
+    "save": "Lưu",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa",
+    "create": "Tạo mới",
+    "update": "Cập nhật",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "close": "Đóng",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "previous": "Trước đó",
+    "home": "Trang chủ",
+    "dashboard": "Bảng điều khiển",
+    "profile": "Hồ sơ",
+    "settings": "Cài đặt",
+    "logout": "Đăng xuất",
+    "login": "Đăng nhập",
+    "register": "Đăng ký"
+  },
+  "navigation": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "contact": "Liên hệ",
+    "blog": "Blog",
+    "services": "Dịch vụ"
+  },
+  "auth": {
+    "signIn": "Đăng nhập",
+    "signOut": "Đăng xuất",
+    "signUp": "Đăng ký",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "forgotPassword": "Quên mật khẩu?",
+    "rememberMe": "Ghi nhớ đăng nhập",
+    "alreadyHaveAccount": "Đã có tài khoản?",
+    "dontHaveAccount": "Chưa có tài khoản?",
+    "createAccount": "Tạo tài khoản"
+  },
+  "validation": {
+    "required": "Trường này là bắt buộc",
+    "emailInvalid": "Vui lòng nhập địa chỉ email hợp lệ",
+    "passwordTooShort": "Mật khẩu phải có ít nhất 8 ký tự",
+    "passwordsDoNotMatch": "Mật khẩu không khớp",
+    "minLength": "Độ dài tối thiểu là {{count}} ký tự",
+    "maxLength": "Độ dài tối đa là {{count}} ký tự"
+  },
+  "errors": {
+    "general": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "network": "Lỗi mạng. Vui lòng kiểm tra kết nối.",
+    "unauthorized": "Bạn không có quyền thực hiện hành động này.",
+    "notFound": "Không tìm thấy tài nguyên được yêu cầu.",
+    "serverError": "Lỗi server. Vui lòng thử lại sau."
+  },
+  "language": {
+    "switchLanguage": "Chuyển đổi ngôn ngữ",
+    "english": "Tiếng Anh",
+    "vietnamese": "Tiếng Việt"
+  },
+  "page": {
+    "hero": {
+      "title": "Chào mừng đến với GradFE",
+      "description": "Ứng dụng Next.js hiện đại được xây dựng với Clean Architecture, TypeScript, Tailwind CSS và các phương pháp tốt nhất cho phát triển web có thể mở rộng.",
+      "getStarted": "Bắt đầu",
+      "viewGithub": "Xem trên GitHub"
+    },
+    "features": {
+      "themeSwitching": "Chuyển đổi giao diện",
+      "dropdownThemeToggle": "Dropdown chuyển đổi giao diện",
+      "dropdownDescription": "Chọn giữa chế độ sáng, tối và hệ thống.",
+      "simpleThemeToggle": "Chuyển đổi giao diện đơn giản",
+      "simpleDescription": "Chuyển đổi nhanh giữa chế độ sáng và tối.",
+      "fastModern": "Nhanh & Hiện đại",
+      "fastDescription": "Được xây dựng với Next.js 15, React 19, và tối ưu hóa hiệu suất với Turbopack.",
+      "typeSafe": "An toàn kiểu dữ liệu",
+      "typeDescription": "Hỗ trợ TypeScript đầy đủ với kiểm tra kiểu nghiêm ngặt và trải nghiệm phát triển tuyệt vời.",
+      "cleanArchitecture": "Kiến trúc sạch",
+      "cleanDescription": "Cấu trúc dự án được tổ chức tốt theo nguyên tắc Clean Architecture.",
+      "techStack": "Xây dựng với Công nghệ Hiện đại"
+    }
+  },
+  "footer": {
+    "description": "Xây dựng tương lai của phát triển web với công nghệ hiện đại và phương pháp tốt nhất.",
+    "quickLinks": "Liên kết nhanh",
+    "company": "Công ty",
+    "support": "Hỗ trợ",
+    "legal": "Pháp lý",
+    "documentation": "Tài liệu",
+    "components": "Thành phần",
+    "examples": "Ví dụ",
+    "aboutUs": "Về chúng tôi",
+    "careers": "Tuyển dụng",
+    "team": "Đội ngũ",
+    "helpCenter": "Trung tâm trợ giúp",
+    "community": "Cộng đồng",
+    "contact": "Liên hệ",
+    "privacyPolicy": "Chính sách bảo mật",
+    "termsOfService": "Điều khoản dịch vụ",
+    "cookiePolicy": "Chính sách cookie",
+    "allRightsReserved": "Tất cả quyền được bảo lưu."
+  }
+}
