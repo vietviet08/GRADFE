@@ -5,7 +5,9 @@ import '../globals.css';
 import { ThemeProvider } from '../theme-provider';
 import { Navbar } from '@/components/common';
 import { Footer } from '@/components/layout';
+import { TranslationProvider } from '@/components/i18n';
 import { locales, Locale } from '@/i18n';
+import { getServerTranslations } from '@/lib/translations';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -77,6 +79,9 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  // Load translations on server-side to prevent delay
+  const translations = await getServerTranslations(locale as Locale);
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
@@ -86,13 +91,18 @@ export default async function LocaleLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className='flex min-h-screen flex-col bg-background text-foreground'>
-            <Navbar />
-            <main className='container mx-auto flex-1 px-4 py-8'>
-              {children}
-            </main>
-            <Footer />
-          </div>
+          <TranslationProvider
+            initialLocale={locale as Locale}
+            initialTranslations={translations}
+          >
+            <div className='flex min-h-screen flex-col bg-background text-foreground'>
+              <Navbar />
+              <main className='container mx-auto flex-1 px-4 py-8'>
+                {children}
+              </main>
+              <Footer />
+            </div>
+          </TranslationProvider>
         </ThemeProvider>
       </body>
     </html>
