@@ -56,8 +56,10 @@
     "general": "Đã xảy ra lỗi. Vui lòng thử lại.",
     "network": "Lỗi mạng. Vui lòng kiểm tra kết nối.",
     "unauthorized": "Bạn không có quyền thực hiện hành động này.",
-    "notFound": "Không tìm thấy tài nguyên được yêu cầu.",
-    "serverError": "Lỗi server. Vui lòng thử lại sau."
+    "notFound": "Không Tìm Thấy Trang",
+    "notFoundDescription": "Xin lỗi, chúng tôi không thể tìm thấy trang bạn đang tìm kiếm. Trang có thể đã được di chuyển, xóa hoặc URL có thể không chính xác.",
+    "serverError": "Lỗi server. Vui lòng thử lại sau.",
+    "contactSupport": "Nếu bạn tin rằng đây là lỗi, vui lòng liên hệ hỗ trợ."
   },
   "language": {
     "switchLanguage": "Chuyển đổi ngôn ngữ",
