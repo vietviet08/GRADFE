@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+export { useMounted } from './use-mounted';
+
 /**
  * Hook to debounce a value
  * @param value - Value to debounce
